@@ -1,0 +1,57 @@
+{
+    "routes": [
+        {
+            "body": {
+                "status": "ok"
+            },
+            "method": "GET",
+            "path": "/health"
+        },
+        {
+            "body": [
+                {
+                    "id": 1,
+                    "name": "Ada Lovelace"
+                },
+                {
+                    "id": 2,
+                    "name": "Alan Turing"
+                }
+            ],
+            "method": "GET",
+            "path": "/users"
+        },
+        {
+            "body": {
+                "id": "{{id}}",
+                "name": "User {{id}}",
+                "requested_at": "{{now}}"
+            },
+            "method": "GET",
+            "path": "/users/{id}"
+        },
+        {
+            "body": {
+                "query": "{{q}}",
+                "results": []
+            },
+            "method": "GET",
+            "path": "/search"
+        },
+        {
+            "body": {
+                "created": "{{now}}",
+                "id": "{{uuid}}",
+                "name": "{{body.name}}"
+            },
+            "method": "POST",
+            "path": "/users",
+            "status": 201
+        },
+        {
+            "method": "DELETE",
+            "path": "/users/{id}",
+            "status": 204
+        }
+    ]
+}
